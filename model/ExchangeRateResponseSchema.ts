@@ -167,6 +167,8 @@ const CurrencyCodeEnum = z.enum([
 	"ZWL",
 ])
 
+export type CurrencyCode = z.infer<typeof CurrencyCodeEnum>
+
 export const ExchangeRateResponseSchema = z.object({
 	result: ResultEnum,
 	documentation: z.string().url(),

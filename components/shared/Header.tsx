@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Container } from "./Container"
+import { CurrentCurrency } from "./CurrentCurrency"
 import { ModeToggle } from "./ModeToggle"
 
 export const Header = () => {
@@ -12,7 +13,7 @@ export const Header = () => {
 				</Link>
 				<div className="flex items-center gap-4 max-md:mr-14">
 					<ModeToggle />
-					<strong>Current Currency</strong>
+					<CurrentCurrency />
 				</div>
 			</Container>
 		</header>
