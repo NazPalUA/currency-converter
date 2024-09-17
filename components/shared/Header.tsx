@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Container } from "./Container"
+import { ModeToggle } from "./ModeToggle"
 
 export const Header = () => {
 	return (
@@ -10,7 +11,8 @@ export const Header = () => {
 					<span className="text-yellow-400">{" Converter"}</span>
 				</Link>
 				<div className="flex items-center gap-4 max-md:mr-14">
-					Current Currency
+					<ModeToggle />
+					<strong>Current Currency</strong>
 				</div>
 			</Container>
 		</header>
