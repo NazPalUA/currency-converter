@@ -1,4 +1,4 @@
-import { Header } from "@/components/shared/Header"
+import { Header } from "@/components/Header"
 
 import { ThemeProvider } from "@/components/ThemeProvider"
 import { cn } from "@/lib/utils"

@@ -1,6 +1,6 @@
 "use client"
 
-import { Container } from "@/components/shared/Container"
+import { Container } from "@/components/Container"
 import { Button } from "@/components/ui/button"
 import { useEffect } from "react"
 
