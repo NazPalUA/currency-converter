@@ -1,5 +1,5 @@
 import { fetchExchangeRates } from "@/lib/fetchExchangeRates"
-import { getExchangeRate } from "@/lib/getExchangeRate"
+import { getExchangeRate } from "@/lib/utils"
 import type { CurrencyCode } from "@/model/ExchangeRateResponseSchema"
 
 export const CurrentCurrency = async () => {
