@@ -1,10 +1,14 @@
 import { Container } from "@/components/Container"
+import { CurrencyConverter } from "@/components/CurrencyConverter"
+import { fetchExchangeRates } from "@/lib/fetchExchangeRates"
 
-export default function Home() {
+export default async function Home() {
+	const exchangeRatesData = await fetchExchangeRates()
+
 	return (
-		<main className="min-h-screen">
+		<main className="min-h-full">
 			<Container>
-				<div className="w-full">Main content</div>
+				<CurrencyConverter exchangeRates={exchangeRatesData.conversion_rates} />
 			</Container>
 		</main>
 	)
