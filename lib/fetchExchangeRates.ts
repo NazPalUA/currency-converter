@@ -11,11 +11,9 @@ export async function fetchExchangeRates() {
 		`https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`,
 		{
 			// Next.js fetch options for caching and revalidation
-			// next: {
-			// revalidate: 5, // Revalidate data every 5 seconds
-
-			// },
-			cache: "no-cache",
+			next: {
+				revalidate: 60, // Revalidate data every 60 seconds
+			},
 		}
 	).then(res => {
 		console.log("New fetch request made to get exchange rates")
