@@ -12,8 +12,10 @@ export async function fetchExchangeRates() {
 		{
 			// Next.js fetch options for caching and revalidation
 			// next: {
-			// 	revalidate: 5, // Revalidate data every 5 seconds
+			// revalidate: 5, // Revalidate data every 5 seconds
+
 			// },
+			cache: "no-cache",
 		}
 	).then(res => {
 		console.log("New fetch request made to get exchange rates")
