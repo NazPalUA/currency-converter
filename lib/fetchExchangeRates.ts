@@ -15,7 +15,10 @@ export async function fetchExchangeRates() {
 				revalidate: 5, // Revalidate data every 5 seconds
 			},
 		}
-	)
+	).then(res => {
+		console.log("New fetch request made to get exchange rates")
+		return res
+	})
 
 	if (!res.ok) {
 		throw new Error("Failed to fetch exchange rates")
