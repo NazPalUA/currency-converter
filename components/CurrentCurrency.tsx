@@ -23,7 +23,7 @@ export const CurrentCurrency = async () => {
 	const currenciesToDisplay: CurrencyCode[] = ["USD", "EUR"]
 
 	return (
-		<div className="flex flex-col items-center gap-0 max-md:mr-14">
+		<div className="flex flex-col items-end gap-0">
 			{currenciesToDisplay.map(currency => {
 				const rate = getExchangeRate(
 					baseCurrency,
@@ -31,7 +31,7 @@ export const CurrentCurrency = async () => {
 					exchangeRates
 				).toFixed(2)
 				return (
-					<div key={currency}>
+					<div key={currency} className="text-nowrap">
 						{currency}: {rate}
 					</div>
 				)

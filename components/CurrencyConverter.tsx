@@ -6,7 +6,7 @@ import { currencyNames } from "@/lib/currencies"
 import { convertAmount } from "@/lib/utils"
 import type { CurrencyCode } from "@/model/ExchangeRateResponseSchema"
 import { ArrowLeftRight } from "lucide-react"
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Button } from "./ui/button"
 
 type Props = {
@@ -65,9 +65,9 @@ export const CurrencyConverter = ({ exchangeRates }: Props) => {
 	}
 
 	return (
-		<div className="flex justify-between items-center gap-4 bg-secondary w-min p-8 rounded-2xl m-auto ">
+		<div className="flex flex-col sm:flex-row justify-between items-center gap-4 bg-secondary text-secondary-foreground  w-full max-w-2xl p-8 rounded-2xl m-auto ">
 			{/* First Column */}
-			<div className="flex flex-col items-center gap-4 ">
+			<Wrapper>
 				<CurrencySelector
 					value={fromCurrency}
 					onChange={setFromCurrency}
@@ -80,21 +80,16 @@ export const CurrencyConverter = ({ exchangeRates }: Props) => {
 					currencyCode={fromCurrency}
 					id="fromAmount"
 				/>
-			</div>
+			</Wrapper>
 
 			{/* A button to swap currencies */}
-			<Button
-				className="hidden md:block p-0 "
-				variant="ghost"
-				size="icon"
-				onClick={swapCurrencies}
-			>
-				<ArrowLeftRight className="w-7 h-7 m-auto" />
+			<Button variant="ghost" size="icon" onClick={swapCurrencies}>
+				<ArrowLeftRight className="w-7 h-7 m-auto text-primary hover:text-primary/80" />
 				<span className="sr-only">Swap currencies</span>
 			</Button>
 
 			{/* Second Column */}
-			<div className="flex flex-col items-center gap-4">
+			<Wrapper>
 				<CurrencySelector
 					value={toCurrency}
 					onChange={setToCurrency}
@@ -107,7 +102,13 @@ export const CurrencyConverter = ({ exchangeRates }: Props) => {
 					currencyCode={toCurrency}
 					id="toAmount"
 				/>
-			</div>
+			</Wrapper>
 		</div>
+	)
+}
+
+const Wrapper = ({ children }: { children: React.ReactNode }) => {
+	return (
+		<div className="flex flex-col items-center gap-4 w-full">{children}</div>
 	)
 }

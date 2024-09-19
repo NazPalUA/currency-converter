@@ -18,14 +18,14 @@ export const CurrencyInput = ({
 	id,
 }: Props) => {
 	return (
-		<div>
+		<div className="w-full">
 			<Label htmlFor={id}>{currencyCode}</Label>
 			<Input
 				id={id}
 				type="number"
 				value={amount.toString()}
 				onChange={e => onAmountChange(parseFloat(e.target.value))}
-				className="w-48 border-primary"
+				className="border-secondary-foreground"
 			/>
 		</div>
 	)

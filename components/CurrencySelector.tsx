@@ -39,13 +39,13 @@ export const CurrencySelector = ({
 		"NZD", // New Zealand Dollar
 	]
 	return (
-		<div>
+		<div className="w-full">
 			<Label htmlFor={label}>{label}</Label>
 			<Select
 				value={value}
 				onValueChange={value => onChange(value as CurrencyCode)}
 			>
-				<SelectTrigger className="w-48 border-primary">
+				<SelectTrigger className="border-secondary-foreground">
 					<SelectValue placeholder="Select currency" />
 				</SelectTrigger>
 				<SelectContent>

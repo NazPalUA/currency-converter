@@ -18,7 +18,7 @@ export default function Error({
 
 	return (
 		<main>
-			<Container className="flex flex-col items-center justify-center min-h-screen p-8 text-center bg-background">
+			<Container className="text-center">
 				<h1 className="text-4xl font-bold text-destructive mb-4">
 					Oops! Something went wrong.
 				</h1>
