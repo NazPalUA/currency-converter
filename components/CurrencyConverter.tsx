@@ -14,9 +14,9 @@ type Props = {
 }
 
 export const CurrencyConverter = ({ exchangeRates }: Props) => {
-	const [fromCurrency, setFromCurrency] = useState<CurrencyCode>("USD")
-	const [toCurrency, setToCurrency] = useState<CurrencyCode>("EUR")
-	const [fromAmount, setFromAmount] = useState<number>(1)
+	const [fromCurrency, setFromCurrency] = useState<CurrencyCode>("UAH")
+	const [toCurrency, setToCurrency] = useState<CurrencyCode>("USD")
+	const [fromAmount, setFromAmount] = useState<number>(100)
 	const [toAmount, setToAmount] = useState<number>(0)
 
 	// Update toAmount when fromAmount, fromCurrency, or toCurrency changes
